@@ -3,7 +3,7 @@
     include '/ospanel/domains/Videosalon/api/config/DBconect.php';
 
 
-    $sql = 'SELECT * FROM films';
+    $sql = 'SELECT * FROM users';
     
     $query = $con->prepare($sql);
 
