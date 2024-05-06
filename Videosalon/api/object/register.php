@@ -8,11 +8,11 @@
         $surname = $_POST['surname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $confPass = $_POST['conf-password'];
+        $confPass = $_POST['confpassword'];
         $role = $_POST['role'];
         $err = false;
 
-        if ($name == '' && $surname== '' && $email == '' && $password  == '' && $confPass == '')
+        if ($name == '' || $surname== '' || $email == '' || $password  == '' || $confPass == '')
         {
             $massage = array(
                 'massage'=>'поля не заполнены'

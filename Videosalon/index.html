@@ -34,12 +34,13 @@
 
 
             $.ajax({
-                url:'http://hueta/api/object/users.php',
+                url:'http://Videosalon/api/object/users.php',
                 method:'post',
                 dataType:'json',
                 data: dataform,
                 success: function(data)
                 {
+                    $('.error').empty();
                     $('.error').append(data.massage);
                     if(data.massage == undefined)
                     {

@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['token']))
     {
-        header('location: http://hueta');
+        header('location: http://Videosalon');
     }
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
         $(window).on('load',function()
         {
             $.ajax({
-                url:'http://hueta/api/object/user.php',
+                url:'http://Videosalon/api/object/user.php',
                 method:'get',
                 dataType:'json',
                 success: function(data)

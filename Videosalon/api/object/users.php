@@ -33,6 +33,7 @@
                     'email'=>$row['email'],
                     'password'=>$row['password'],
                     'role'=>$row['role']),JSON_UNESCAPED_UNICODE);
+                    $_SESSION['user_id'] = $row['id'];
                 print_r(json_encode(['token'=>"${_SESSION['token']}"]));
                 $err = true;
             }

@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['token']))
     {
-        header('location: http://hueta');
+        header('location: http://Videosalon');
     }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проофиль</title>
+    <title>Document</title>
     <script src="../scripts/requests/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -24,16 +24,11 @@
             </ul>
         </nav>
     </header>
-    <div class="user">
-        <div class="user-data">
-
-        </div>
-    </div>
     <script>
         $(window).on('load',function()
         {
             $.ajax({
-                url:'http://hueta/api/object/user.php',
+                url:'http://Videosalon/api/object/user.php',
                 method:'get',
                 dataType:'json',
                 success: function(data)
@@ -42,10 +37,11 @@
                     {
                         $('.menu').append(`<li><a href="admin/administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
                     }
-                    $('.user').append(`Здравствуйте ${data.name}`);
+                    $('.menu').append(`<li><a class="profile-punkt" href="profile.php">${data.name}</a></li>`);
                 }
             });
         });
     </script>
+    тут АКЦИИ
 </body>
 </html>
