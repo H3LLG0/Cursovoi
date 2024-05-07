@@ -24,11 +24,11 @@
                 </label>
                 <label for="password">
                     Введите пароль пользователя
-                    <input type="password" placeholder="пароль" id="password" name="password" required minlength="8">
+                    <input type="password" placeholder="пароль" id="password" name="password" required minlength="8" pattern="^[A-Za-z0-9]+$">
                 </label>
                 <label for="conf-password">
                     Введите пароль пользователя
-                    <input type="password" placeholder="повторите пароль" id="confpassword" name="confpassword" required minlength="8">
+                    <input type="password" placeholder="повторите пароль" id="confpassword" name="confpassword" required minlength="8" pattern="^[A-Za-z0-9]+$">
                 </label>
                 <input type="hidden" value="user" id="role" name="role" required>
                 <button type="submit">зарегистрироваться</button>
@@ -53,7 +53,10 @@
                 {
                     $('.errors').empty();
                     $('.errors').append(data.massage);
-                    location.href = '/index.html';
+                    if(data.massage == undefuned)
+                    {
+                        location.href = '/index.html';
+                    }
                 }
             });
             }
