@@ -35,7 +35,7 @@
                 {
                     if(data.role == 'admin')
                     {
-                        $('.menu').append(`<li><a href="admin/administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
+                        $('.menu').append(`<li><a href="administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
                     }
                     $('.menu').append(`<li><a class="profile-punkt" href="/app/views/profile.php">${data.name}</a></li>`);
                 }
@@ -49,6 +49,7 @@
         </div>
         <div class="film-operation">
             <h2>Библиотека фильмов</h2>
+            <a href="allfilms.php">просмотреть список фильмов</a>
         </div>
         <div class="promo-operation">
             <h2>Действия с акциями</h2>
