@@ -1,11 +1,3 @@
-<?php
-    session_start();
-    if(!isset($_SESSION['token']))
-    {
-        header('location: http://Videosalon');
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
