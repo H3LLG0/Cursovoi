@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Зарегистрироваться в системе</title>
     <script src="../scripts/requests/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -11,25 +11,25 @@
         <form id="register-form">
             <div class="register-container">
                 <label for="name">
-                    Введите имя пользователя
+                    Введите имя пользователя<br>
                     <input type="text" placeholder="имя" id="name" name="name" required minlength="2" pattern="^[А-Яа-яЁё]+$" title="Для ввода доступны только русские буквы">
-                </label>
+                </label><br>
                 <label for="surname">
-                    Введите фамилию пользователя
+                    Введите фамилию пользователя<br>
                     <input type="text" placeholder="фамилмя" id="surname" name="surname" required minlength="2" pattern="^[А-Яа-яЁё]+$" title="Для ввода доступны только русские буквы">
-                </label>
+                </label><br>
                 <label for="email">
-                    Введите email пользователя
+                    Введите email пользователя<br>
                     <input type="email" placeholder="email" id="email" name="email" required minlength="3">
-                </label>
+                </label><br>
                 <label for="password">
-                    Введите пароль пользователя
+                    Введите пароль пользователя<br>
                     <input type="password" placeholder="пароль" id="password" name="password" required minlength="8" pattern="^[A-Za-z0-9]+$">
-                </label>
+                </label><br>
                 <label for="conf-password">
-                    Введите пароль пользователя
+                    Введите пароль пользователя<br>
                     <input type="password" placeholder="повторите пароль" id="confpassword" name="confpassword" required minlength="8" pattern="^[A-Za-z0-9]+$">
-                </label>
+                </label><br>
                 <input type="hidden" value="user" id="role" name="role" required>
                 <button type="submit">зарегистрироваться</button>
             </div>

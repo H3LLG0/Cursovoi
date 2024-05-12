@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Контакты</title>
     <script src="../scripts/requests/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -18,12 +18,31 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="main.php">ФИЛЬМЫ</a></li>
-                <li><a href="promo.php">АКЦИИ</a></li>
                 <li><a href="about.php">О НАС</a></li>
                 <li><a href="contact.php">КОНТАКТЫ</a></li>
             </ul>
         </nav>
     </header>
+    <main>
+        <div class="contact">
+            <form class="contact-form" id="massage-form">
+                <div class="form-container">
+                    <label for="title">
+                        Тема сообщения<br>
+                        <input type="text" name="title" required>
+                    </label><br>
+                    <label for="massage">
+                        Текст сообщения<br>
+                        <textarea name="massage" required></textarea>
+                    </label><br>
+                    <button type="submit">отправить</button>
+                </div>
+            </form>
+            <div class="result">
+
+            </div>
+        </div>
+    </main>
     <script>
         $(window).on('load',function()
         {
@@ -41,7 +60,24 @@
                 }
             });
         });
+        $('#massage-form').on('submit',function()
+        {
+            event.preventDefault();
+            let dataform = $(this).serialize();
+            $.ajax({
+                url:'http://Videosalon/api/object/sendmassage.php',
+                method: 'post',
+                dataType: 'json',
+                data:dataform,
+                success: function(data)
+                {
+                    $('#massage-form').trigger("reset");
+                    $('.result').append(`${data.massage}`);
+                }
+            });
+        });
     </script>
-    тут КОНТАКТЫ
+    <footer>
+    </footer>
 </body>
 </html>

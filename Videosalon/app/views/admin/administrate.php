@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Администрирование</title>
     <script src="/app/scripts/requests/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,6 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="/app/views/main.php">ФИЛЬМЫ</a></li>
-                <li><a href="/app/views/promo.php">АКЦИИ</a></li>
                 <li><a href="/app/views/about.php">О НАС</a></li>
                 <li><a href="/app/views/contact.php">КОНТАКТЫ</a></li>
             </ul>
@@ -35,7 +34,7 @@
                 {
                     if(data.role == 'admin')
                     {
-                        $('.menu').append(`<li><a href="admin/administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
+                        $('.menu').append(`<li><a href="administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
                     }
                     $('.menu').append(`<li><a class="profile-punkt" href="/app/views/profile.php">${data.name}</a></li>`);
                 }
@@ -49,9 +48,14 @@
         </div>
         <div class="film-operation">
             <h2>Библиотека фильмов</h2>
+            <ul>
+                <li><a href="allfilms.php">просмотреть список фильмов</a></li>
+                <li><a href="createfilm.php">добавить фильм</a></li>
+            </ul>
         </div>
-        <div class="promo-operation">
-            <h2>Действия с акциями</h2>
+        <div class="massages">
+            <h2>Сообщения</h2>
+            <a href="massages.php">просмотреть сообщения</a>
         </div>
     </div>
 </body>

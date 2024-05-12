@@ -17,7 +17,6 @@
 <nav class="navbar">
             <ul class="menu">
                 <li><a href="/app/views/main.php">ФИЛЬМЫ</a></li>
-                <li><a href="/app/views/promo.php">АКЦИИ</a></li>
                 <li><a href="/app/views/about.php">О НАС</a></li>
                 <li><a href="/app/views/contact.php">КОНТАКТЫ</a></li>
             </ul>

@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>о компании</title>
     <script src="../scripts/requests/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,6 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="main.php">ФИЛЬМЫ</a></li>
-                <li><a href="promo.php">АКЦИИ</a></li>
                 <li><a href="about.php">О НАС</a></li>
                 <li><a href="contact.php">КОНТАКТЫ</a></li>
             </ul>

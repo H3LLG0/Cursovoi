@@ -18,7 +18,6 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="main.php">ФИЛЬМЫ</a></li>
-                <li><a href="promo.php">АКЦИИ</a></li>
                 <li><a href="about.php">О НАС</a></li>
                 <li><a href="contact.php">КОНТАКТЫ</a></li>
             </ul>
@@ -26,7 +25,6 @@
     </header>
     <div class="user">
         <div class="user-data">
-
         </div>
     </div>
     <script>
@@ -42,7 +40,23 @@
                     {
                         $('.menu').append(`<li><a href="admin/administrate.php">АДМИНИСТРИРОВАНИЕ</a></li>`);
                     }
+                    $('.menu').append(`<li><button class="exit">выйти из аккаунта</button></li>`);
                     $('.user').append(`Здравствуйте ${data.name}`);
+                    $('.exit').on('click',function()
+                    {
+                        let exit = {'exit':true};
+                        $.ajax({
+                            url: 'http://Videosalon/api/object/exit.php',
+                            method: 'post',
+                            dataType: 'json',
+                            data: exit,   
+                            success: function(data)
+                            {
+                                console.log(data.massage);
+                                location.reload(true);
+                            }
+                        });
+                    });
                 }
             });
         });
