@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 12 2024 г., 16:01
--- Версия сервера: 5.7.39
--- Версия PHP: 8.0.22
+-- Время создания: Май 14 2024 г., 10:24
+-- Версия сервера: 8.0.30
+-- Версия PHP: 8.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `films` (
-  `id` int(8) NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `producer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `year` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `duration` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `producer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `duration` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `films` (
 
 INSERT INTO `films` (`id`, `title`, `description`, `type`, `producer`, `year`, `duration`, `picture`) VALUES
 (2, 'Сербский фильм', 'семейное кино', 'драмма', 'не я снял', '2011', '1:43:00', 'SerbianFilm.webp'),
-(3, 'Зелёный Слоник', 'фильм ахуенный', 'говно', 'я снял', '1999', '1:26:00', 'UvpviHSOgwg.jpg');
+(3, 'Зелёный Слоник', 'фильм хороший', 'говно', 'я снял', '1999', '1:26:00', 'UvpviHSOgwg.jpg');
 
 -- --------------------------------------------------------
 
@@ -53,11 +53,11 @@ INSERT INTO `films` (`id`, `title`, `description`, `type`, `producer`, `year`, `
 --
 
 CREATE TABLE `massage` (
-  `id_msg` int(11) NOT NULL,
-  `user` int(11) NOT NULL,
-  `massage` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id_msg` int NOT NULL,
+  `user` int NOT NULL,
+  `massage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -68,7 +68,8 @@ INSERT INTO `massage` (`id_msg`, `user`, `massage`, `title`, `status`) VALUES
 (8, 2, 'тест', 'тест', 'read'),
 (9, 2, 'dfg', 'gdfg', 'read'),
 (10, 2, 'fghfdghfdg', 'dfgdfg', 'read'),
-(11, 2, 'sdfsdfsdf', 'tot ntcn', 'read');
+(11, 2, 'sdfsdfsdf', 'tot ntcn', 'read'),
+(12, 2, 'вапвап', 'апва', 'read');
 
 -- --------------------------------------------------------
 
@@ -77,12 +78,12 @@ INSERT INTO `massage` (`id_msg`, `user`, `massage`, `title`, `status`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(8) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `surname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -127,19 +128,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `massage`
 --
 ALTER TABLE `massage`
-  MODIFY `id_msg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_msg` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
