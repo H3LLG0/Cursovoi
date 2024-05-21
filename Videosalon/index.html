@@ -3,52 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app/scripts/requests/jquery-3.7.1.min.js"></script>
-    <title>Добро пожаловать</title>
+    <title>Document</title>
+    <script src="APP/jq/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+    <header>
+
+    </header>
     <main>
-        <div class="login-container">
-            <form id="loginform">
-                <div class="form-content">
-                    <label for="email">
-                        Email<br>
-                        <input type="email" placeholder="email" name="email" id="email">
-                    </label><br>
-                    <label for="password">
-                        Пароль<br>
-                        <input type="password" placeholder="пароль" id="password" name="password">
-                    </label><br>
-                    <button type="submit">войти</button>
-                </div>
-            </form>
-            <div class="reg">нет аккаунта? - <a href="/app/views/registeruser.php" class="reg-a">Зарегистрироваться сейчас</a></div>
-            <div class="error"></div>
-        </div>
+        
     </main>
-    <script>
-        $('#loginform').on('submit',function()
-        {
-            event.preventDefault();
-            let dataform = $(this).serialize();
+    <footer>
 
-
-            $.ajax({
-                url:'http://Videosalon/api/object/users.php',
-                method:'post',
-                dataType:'json',
-                data: dataform,
-                success: function(data)
-                {
-                    $('.error').empty();
-                    $('.error').append(data.massage);
-                    if(data.massage == undefined)
-                    {
-                        location.href = 'app/views/main.php'
-                    }
-                }
-            });
-        });
-    </script>
+    </footer>
+    <script type="module" src="APP/app.js"></script>
 </body>
 </html>
