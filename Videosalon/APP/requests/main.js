@@ -1,14 +1,22 @@
 export let mainpaje = () =>
 {
-    $('header').append(`
+    $.ajax({
+        url:'',
+        method:'',
+        dataType:'',
+        success: function(data)
+        {
+            $('header').append(`
                         <nav>
                             <ul>
-                                <li>это навигация</li>
+                                <li>${data.name} $</li>
                             </ul>
                         </nav>
                     `);
-    $('main').append('это основная часть');
-    $('footer').append(`<div class='footcontent'>
-                            это подвал
-                        </div>`);
+            $('main').append('это основная часть');
+            $('footer').append(`<div class='footcontent'>
+                                    это подвал
+                                </div>`);
+        }
+    });
 }

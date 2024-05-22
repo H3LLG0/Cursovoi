@@ -3,7 +3,7 @@
      session_start();
      if(!empty($_SESSION['user_data']))
      {
-        echo json_encode($_SESSION['user_data'], JSON_UNESCAPED_UNICODE);
+        echo $_SESSION['user_data'];
      }
      else
      {

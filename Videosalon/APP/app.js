@@ -1,5 +1,6 @@
 import {login} from './requests/login.js';
 import {mainpaje} from './requests/main.js';
+import {register} from './requests/register.js';
 $(window).on('load',function()
 {
     $.ajax({
@@ -21,10 +22,13 @@ $(window).on('load',function()
                                                 <button type="submit">войти</button>
                                             </div>
                                         </form>
+                                        Нет аккаунта - <button id='register-btn'>Зарегистрироваться</button>
                                     </div>
                                 </section>
                                 `);
+                register();
                 login();
+
             }
             else
             {
