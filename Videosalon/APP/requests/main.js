@@ -1,15 +1,15 @@
 export let mainpaje = () =>
 {
     $.ajax({
-        url:'',
-        method:'',
-        dataType:'',
+        url:'http://videosalon/api/session/CurrentUser.php',
+        method:'get',
+        dataType:'json',
         success: function(data)
         {
             $('header').append(`
                         <nav>
                             <ul>
-                                <li>${data.name} $</li>
+                                <li>${data.name}</li>
                             </ul>
                         </nav>
                     `);

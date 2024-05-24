@@ -12,40 +12,30 @@
     $database = new Database();
     $db = $database->getConnection();
     $users = new User($db);
-    $data = json_decode(file_get_contents("php://input"));
 
-    if (!empty($data->name) && !empty($data->surname) && !empty($data->email) && !empty($data->password) && !empty($data->role))
+    if (!empty($_POST['name']) && !empty($_POST['surname']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role']))
         {
-         // устанавливаем значения свойств Номера
-            $users->name = $data->name;
-            $users->surname = $data->surname;
-            $users->email = $data->email;
-            $users->password = $data->password;
-            $users->role = $data->role;
+            $users->name = $_POST['name'];
+            $users->surname = $_POST['surname'];
+            $users->email = $_POST['email'];
+            $users->password = $_POST['password'];
+            $users->role = $_POST['role'];
 
             if ($users-> registerUser()) {
-                // установим код ответа - 201 создано
                 http_response_code(201);
         
-                // сообщим пользователю
                 echo json_encode(array("message" => "Регистрация успешна."), JSON_UNESCAPED_UNICODE);
             }
-            // если не удается создать Номер, сообщим пользователю
             else {
-                // установим код ответа - 503 сервис недоступен
                 http_response_code(503);
         
-                // сообщим пользователю
                 echo json_encode(array("message" => "Невозможно зарегистрироваться."), JSON_UNESCAPED_UNICODE);
             }
         }
-        // сообщим пользователю что данные неполные
         else {
-            // установим код ответа - 400 неверный запрос
             http_response_code(400);
         
-            // сообщим пользователю
             echo json_encode(array("message" => "Невозможно зарегистрироваться. Данные неполные."), JSON_UNESCAPED_UNICODE);
-        }
+    }
 
 ?>
