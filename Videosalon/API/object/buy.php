@@ -31,5 +31,21 @@
         }
             return false;
         }
+
+        function ReadBuedFilms()
+        {
+            $query = "SELECT * FROM film_buy WHERE client=:client";
+
+        $stmt = $this->con->prepare($query);
+
+        $this->client = htmlspecialchars(strip_tags($this->client));
+
+        $stmt->bindParam(":client", $this->client, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }    
     }
 ?>

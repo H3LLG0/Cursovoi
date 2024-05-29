@@ -8,12 +8,58 @@ export let mainpaje = () =>
         {
             $('header').append(`
                                 <nav>
-                                    <ul>
-                                        <li><button class='name'>${data.name}</button><br>
+                                    <ul class='menu-list'>
+                                        <li><button class='profile-btn'>${data.name}</button><br>
                                                                 <button class='exit-btn'>выход</button></li>
                                     </ul>
                                 </nav>
                             `);
+            $('.profile-btn').on('click',function()
+            {
+
+                $('main').empty();
+                $('main').append(`<section class='profile'>
+                                    <button class='fuck-go-back'>назад</button>
+                                        <div class='user-info'>
+                                            <h2>${data.name} ${data.surname}</h2>
+                                            <div class='rented-films'>
+
+                                            </div>
+                                            <div class='buyed-films'>
+
+                                            </div>
+                                        </div>
+                                    </section>`);
+                $('.fuck-go-back').on('click',function(){location.reload(true)});
+                $.ajax({
+                    url:'http://videosalon/api/entity/readRent.php',
+                    method:'post',
+                    dataType:'json',
+                    data: {
+                        'client':data.id
+                    },
+                    success: function(rented)
+                    {
+                        console.log(rented);
+                    }
+                });
+                $.ajax({
+                    url:'http://videosalon/api/entity/readBuy.php',
+                    method:'post',
+                    dataType:'json',
+                    data: {
+                        'client':data.id
+                    },
+                    success: function(rented)
+                    {
+                        console.log(rented);
+                    }
+                });
+            });
+            if(data.role == 'admin')
+                {
+                    $('.menu-list').append(`<li><button class='add-film'>добавить фильм</button></li>`);
+                }
                             $('.exit-btn').on('click',function()
                             {
                                 $.ajax({
@@ -47,19 +93,62 @@ export let mainpaje = () =>
                                                                         Описание: ${film.description}<br>
                                                                     </div>
                                                                 </div>`);
-                                        $('.film-container').append(`
-                                                                        <div class='film-actions'>
+                                        $(`#film${i}`).append(`
+                                                                        <div class='film-actions' id='film-actions${i}'>
                                                                             цена аренды: ${film.rentprice}р. за сутки <button class='film-rent' id='rent${i}'>арендовать</button><br>
                                                                             цена покупки: ${film.buyprice}р. <button class='film-buy' id='buy${i}'>купить</button>
                                                                         </div>
                                                                     `);
                                         if(data.role == 'admin')
                                             {
-                                                $('.film-actions').append(`
+                                                $(`#film-actions${i}`).append(`
                                                                             <br>
                                                                             <button class='film-rent' id='update${i}'>редактировать</button><br>
                                                                             <button class='film-buy' id='delete${i}'>удалить</button>
-                                                                        `)
+                                                                        `);
+                                                $('.add-film').on('click',function()
+                                                    {
+                                                        $('main').empty();
+                                                        $('main').append(`<div class='update-form'>
+                                                        <button class='fuck-go-back'>назад</button>
+                                                        <form id='create-film-form'>
+                                                            <div class='update-film-form-container'>
+                                                                <label>название</label><br>
+                                                                <input name='title' type='text' placeholder='Название' required><br>
+                                                                <label>постер</label><br>
+                                                                <input name='poster' type='file' placeholder='загрузите постер' required><br>
+                                                                <label>режиссёр</label><br>
+                                                                <input name='producer' type='text' placeholder='режиссер' required><br>
+                                                                <label>описание</label><br>
+                                                                <input name='description' type='text' placeholder='описание' required><br>
+                                                                <label>цена аренды за 1 день</label><br>
+                                                                <input name='rentprice' type='number' placeholder='цена за 1 день' required><br>
+                                                                <label>цена за покупку</label><br>
+                                                                <input name='buyprice' type='number' placeholder='цена за покупку' required><br>
+                                                                <button type='submit'>Добавить фильм</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>`);
+                                    $('.fuck-go-back').on('click',function(){location.reload(true)});
+                                    $('#create-film-form').on('submit',function()
+                                {
+                                    event.preventDefault();
+                                    var $that = $(this),
+                                    formData = new FormData($that.get(0));
+                                $.ajax({
+                                    url: 'http://videosalon/api/entity/createFilm.php',
+                                    method: 'post',
+                                    contentType: false,
+                                    processData: false,
+                                    data: formData,
+                                    success: function(message)
+                                    {
+                                        alert(message.message);
+                                        location.reload(true);
+                                    }
+                                });
+                                })
+                                                    });
                                             }
                                             //тут обработчики кнопок начинаются (ненавижу фронтенд :/)
 
@@ -194,8 +283,6 @@ export let mainpaje = () =>
                                                 var $that = $(this),
                                                 formData = new FormData($that.get(0));
 
-                                                console.log(formData);
-
                                             $.ajax({
                                                 url: 'http://videosalon/api/entity/updateFilm.php',
                                                 method: 'post',
@@ -212,7 +299,19 @@ export let mainpaje = () =>
                                             });
                                             $(`#delete${i}`).on('click',function()
                                             {
-                                                
+                                                $.ajax({
+                                                    url: 'http://videosalon/api/entity/deleteFilm.php',
+                                                    method: 'post',
+                                                    dataType: 'json',
+                                                    data: {
+                                                        'id':film.id
+                                                    },
+                                                    success: function(message)
+                                                    {
+                                                        alert(message.message);
+                                                        location.reload(true);
+                                                    }
+                                                });
                                             });
                                             
                                             //тут обработчики кнопок кончаются

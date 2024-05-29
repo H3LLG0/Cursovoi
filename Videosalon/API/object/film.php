@@ -107,5 +107,24 @@
         }
             return false;
         }
+
+        function DeleteFilm()
+        {
+
+            $query = "DELETE FROM films 
+                        WHERE id=:id";
+
+            $stmt = $this->con->prepare($query);
+
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+            $stmt->bindParam(":id", $this->id);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+                return false;
+
+        }
     }
 ?>
