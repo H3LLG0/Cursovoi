@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 26 2024 г., 23:09
+-- Время создания: Май 29 2024 г., 21:37
 -- Версия сервера: 5.7.39
 -- Версия PHP: 8.0.22
 
@@ -62,7 +62,8 @@ CREATE TABLE `film_buy` (
 --
 
 INSERT INTO `film_buy` (`id`, `client`, `product`, `price`) VALUES
-(1, 11, 1, 600);
+(1, 11, 1, 600),
+(2, 2, 1, 600);
 
 -- --------------------------------------------------------
 
@@ -151,13 +152,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `film_buy`
 --
 ALTER TABLE `film_buy`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `film_rent`
