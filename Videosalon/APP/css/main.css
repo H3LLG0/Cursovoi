@@ -1,0 +1,38 @@
+@font-face
+{
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+    url('/APP/font/Montserrat-VariableFont_wght.ttf');
+
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+}
+body
+{
+    max-width: 1300px;
+    margin: auto;
+}
+header h2
+{
+    text-align: center;
+    padding: 10px;
+}
+footer
+{
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.footcontent
+{
+    padding: 10px;
+    font-size: 20px;
+}
+.footcontent a
+{
+    text-decoration: none;
+    color: black;
+}

@@ -23,10 +23,11 @@ export let mainpaje = () =>
                                         <div class='user-info'>
                                             <h2>${data.name} ${data.surname}</h2>
                                             <div class='rented-films'>
-
+                                                <h3>Арендованые фильмы</h3>
                                             </div>
                                             <div class='buyed-films'>
-
+                                                <h3>Купленые фильмы</h3>
+                                                <div class='buyed-film-container'></div>
                                             </div>
                                         </div>
                                     </section>`);
@@ -40,7 +41,22 @@ export let mainpaje = () =>
                     },
                     success: function(rented)
                     {
-                        console.log(rented);
+                        if(rented.message == 'Вы не арендовывали ни один фильм')
+                            {
+                                $('.rented-films').append(`${rented.message}`);
+                            }
+                        else
+                        {
+                            rented.forEach(film => {
+                                $('.rented-films').append(`<div class='rented-film-container'>
+                                                                <img src='APP/images/posters/${film.poster}' class='film-picture'>
+                                                                <div class='film-info'>
+                                                                    Название: ${film.title}<br>
+                                                                    Арендован на ${film.term} дней<br>
+                                                                </div>
+                                                            </div>`);
+                            });
+                        }
                     }
                 });
                 $.ajax({
@@ -50,9 +66,23 @@ export let mainpaje = () =>
                     data: {
                         'client':data.id
                     },
-                    success: function(rented)
+                    success: function(buyed)
                     {
-                        console.log(rented);
+                        if(buyed.message == 'Вы не купили ни один фильм')
+                            {
+                                $('.buyed-films').append(`${buyed.message}`);
+                            }
+                        else
+                        {
+                            buyed.forEach(film => {
+                                $('.buyed-films').append(`<div class='buyed-films-container'>
+                                <img src='APP/images/posters/${film.poster}' class='film-picture'>
+                                <div class='film-info'>
+                                    Название: ${film.title}<br>
+                                </div>
+                            </div>`);
+                            });
+                        }
                     }
                 });
             });
@@ -321,8 +351,4 @@ export let mainpaje = () =>
                             });
         }
     });
-
-    $('footer').append(`<div class='footcontent'>
-                            это подвал
-                        </div>`);
 }

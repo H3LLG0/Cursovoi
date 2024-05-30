@@ -37,7 +37,10 @@
         }
         function ReadRentedFilms()
         {
-            $query = "SELECT * FROM film_rent WHERE client=:client";
+            $query = "SELECT * FROM film_rent 
+                INNER JOIN films
+                    ON film_rent.product = films.id
+            WHERE client=:client";
 
         $stmt = $this->con->prepare($query);
 

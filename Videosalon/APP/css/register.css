@@ -1,0 +1,11 @@
+.register
+{
+    max-width: 500px;
+    margin: auto;
+}
+.register-form-container
+{
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}

@@ -15,14 +15,17 @@ $(window).on('load',function()
                 $('main').append(`
                                 <section class="login">
                                     <div class="login-form-container">
+                                        <h3>Добро пожаловать в Video-S0S</h3>
                                         <form id="login">
                                             <div class="login-fields">
                                                 <input type="email" placeholder="email" name="email"><br>
                                                 <input type="password" placeholder="password" name="password"><br>
-                                                <button type="submit">войти</button>
+                                                <button type="submit" class='login-btn'>войти</button>
+                                            </div>
+                                            <div class='reg-action'>
+                                                Нет аккаунта - <button id='register-btn'>Зарегистрироваться</button>
                                             </div>
                                         </form>
-                                        Нет аккаунта - <button id='register-btn'>Зарегистрироваться</button>
                                         <span class='msg'></span>
                                     </div>
                                 </section>

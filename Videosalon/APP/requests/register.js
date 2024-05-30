@@ -3,9 +3,10 @@ export let register = () =>
     $('#register-btn').on('click',function()
     {
         $('main').empty();
-        $('main').append(`<div class="register">
+        $('main').append(`<section class="register">
+                            <div class='register-form-container'>
+                            <h3>Зарегистрируйтесь в системе</h3>
                                 <form id='register-form'>
-                                    <div class='register-form'>
                                         <input type='hidden' value='user' name='role'>
                                         <label id='register-name'>Введите имя</label><br>
                                         <input type='text' placeholder='имя' required name='name'><br>
@@ -18,11 +19,10 @@ export let register = () =>
                                         <label>Повторите пароль</label><br>
                                         <input type='password' placeholder='пароль' required name='confpassword'><br>
                                         <button type='submit'>Зарегистрироваться</button>
-                                    </div>
                                     <div class='reg-error'></div>
                                 </form>
-                                <div class='error'></div>
-                            </div>`);
+                            </div>
+                        </section>`);
         $('#register-form').on('submit',function()
         {
             $('.reg-error').empty();

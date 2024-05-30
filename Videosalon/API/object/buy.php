@@ -34,7 +34,10 @@
 
         function ReadBuedFilms()
         {
-            $query = "SELECT * FROM film_buy WHERE client=:client";
+            $query = "SELECT * FROM film_buy
+                INNER JOIN films
+                    ON film_buy.product = films.id
+            WHERE client=:client";
 
         $stmt = $this->con->prepare($query);
 

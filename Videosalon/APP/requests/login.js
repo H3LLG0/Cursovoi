@@ -2,6 +2,7 @@ export let login = () =>
 {
     $('#login').on('submit',function()
     {
+        $('.msg').empty();
         event.preventDefault();
         let dataform = $(this).serialize();
         $.ajax({

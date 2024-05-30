@@ -27,7 +27,6 @@
     }
     }
     else {
-        http_response_code(503);
 
         echo json_encode(array("message" => "Вы не арендовывали ни один фильм"), JSON_UNESCAPED_UNICODE);
     }
