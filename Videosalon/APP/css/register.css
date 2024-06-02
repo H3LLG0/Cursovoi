@@ -2,10 +2,52 @@
 {
     max-width: 500px;
     margin: auto;
+    padding: 180px;
 }
 .register-form-container
 {
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    padding: 20px;
+}
+.register-form-container h3
+{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.register-form-container input
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+.register-form-container input::placeholder
+{
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+}
+.register-form-container input:focus
+{
+    outline: 0;
+}
+.register-form-container button
+{
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+.register-form-container button:hover
+{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+.reg-error
+{
+    margin-top: 10px;
+    color: red;
 }

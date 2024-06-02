@@ -17,7 +17,7 @@ export let register = () =>
                                         <label>Введите пароль</label><br>
                                         <input type='password' placeholder='пароль' required name='password'><br>
                                         <label>Повторите пароль</label><br>
-                                        <input type='password' placeholder='пароль' required name='confpassword'><br>
+                                        <input type='password' placeholder='повторите пароль' required name='confpassword'><br>
                                         <button type='submit'>Зарегистрироваться</button>
                                     <div class='reg-error'></div>
                                 </form>
