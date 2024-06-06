@@ -132,9 +132,10 @@ export let mainpaje = () =>
                                         if(data.role == 'admin')
                                             {
                                                 $(`#film-actions${i}`).append(`
-                                                                            <br>
-                                                                            <button class='film-rent' id='update${i}'>редактировать</button><br>
-                                                                            <button class='film-buy' id='delete${i}'>удалить</button>
+                                                                            <div class='admin-actions'>
+                                                                                <button class='film-update' id='update${i}'>редактировать</button>
+                                                                                <button class='film-delete' id='delete${i}'>удалить</button>
+                                                                            </div>
                                                                         `);
                                                 $('.add-film').on('click',function()
                                                     {
