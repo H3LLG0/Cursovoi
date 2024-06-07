@@ -103,6 +103,7 @@ footer
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .film-rent:hover
 {
@@ -117,6 +118,7 @@ footer
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .film-buy:hover
 {
@@ -131,6 +133,7 @@ footer
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .film-update:hover
 {
@@ -145,10 +148,90 @@ footer
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .film-delete:hover
 {
     transition: .3s ease-in;
     background-color: red;
     color: white;
+}
+.update-form
+{
+    padding: 20px;
+}
+.fuck-go-back
+{
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.fuck-go-back:hover
+{
+    transition: .3s ease-in;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+.update-film-form
+{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+.update-film-form label
+{
+    font-size: 18px;
+}
+.update-film-form input
+{
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    width: 250px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.update-film-form input:focus
+{
+    outline: 0;
+}
+.update-film-form button
+{
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.rent-film-form
+{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    border-radius: 15px;
+}
+.rent-film-form img
+{
+    border-radius: 15px;
+}
+.rent-film-form form button
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
 }

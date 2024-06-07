@@ -191,27 +191,29 @@ export let mainpaje = () =>
                                                 let itog = Number(film.rentprice);
                                                 $('main').append(`<div class='rent-form'>
                                                                     <button class='fuck-go-back'>назад</button>
-                                                                    <div class='product'>
-                                                                    <img src='APP/images/posters/${film.poster}' class='film-picture'>
-                                                                        <div class='film-info'>
-                                                                            Название: ${film.title}<br>
-                                                                            Режиссер: ${film.producer}<br>
+                                                                    <div class='rent-film-form'>
+                                                                        <div class='product'>
+                                                                        <img src='APP/images/posters/${film.poster}' class='film-picture'>
+                                                                            <div class='film-info'>
+                                                                                Название: ${film.title}<br>
+                                                                                Режиссер: ${film.producer}<br>
+                                                                            </div>
                                                                         </div>
+                                                                        <form id='rent-form'>
+                                                                        <label>выберите количество дней аренды:</label>
+                                                                        <select class='term-select' name='term'>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                        </select><br>
+                                                                            <div class='price'>итого к оплате: ${price}р.</div>
+                                                                            <button type='submit'>арендовать</button>
+                                                                        </form>
                                                                     </div>
-                                                                    <form id='rent-form'>
-                                                                    <label>выберите количество дней аренды</label><br>
-                                                                    <select class='term-select' name='term'>
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                        <option value="6">6</option>
-                                                                        <option value="7">7</option>
-                                                                    </select><br>
-                                                                        <div class='price'>итого к оплате: ${price}р.</div>
-                                                                        <button type='submit'>арендовать</button>
-                                                                    </form>
                                                                 </div>`);
                                                                 $("select").change(function(){
                                                                     let value = Number($(this).val());
@@ -287,7 +289,7 @@ export let mainpaje = () =>
                                                 $('main').empty();
                                                 $('main').append(`<div class='update-form'>
                                                                     <button class='fuck-go-back'>назад</button>
-                                                                    <form id='update-film-form'>
+                                                                    <form id='update-film-form' class='update-film-form'>
                                                                         <div class='update-film-form-container'>
                                                                         <input name='id' type="hidden" value="${film.id}">
                                                                             <label>название</label><br>
