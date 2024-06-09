@@ -22,12 +22,11 @@ export let mainpaje = () =>
                                     <button class='fuck-go-back'>назад</button>
                                         <div class='user-info'>
                                             <h2>${data.name} ${data.surname}</h2>
+                                            <h3>Купленые фильмы</h3>
                                             <div class='rented-films'>
-                                                <h3>Арендованые фильмы</h3>
                                             </div>
+                                            <h3>Купленые фильмы</h3>
                                             <div class='buyed-films'>
-                                                <h3>Купленые фильмы</h3>
-                                                <div class='buyed-film-container'></div>
                                             </div>
                                         </div>
                                     </section>`);
@@ -48,7 +47,7 @@ export let mainpaje = () =>
                         else
                         {
                             rented.forEach(film => {
-                                $('.rented-films').append(`<div class='rented-film-container'>
+                                $('.rented-films').append(`<div class='rented-film-container-user'>
                                                                 <img src='APP/images/posters/${film.poster}' class='film-picture'>
                                                                 <div class='film-info'>
                                                                     Название: ${film.title}<br>
@@ -192,7 +191,7 @@ export let mainpaje = () =>
                                                 $('main').append(`<div class='rent-form'>
                                                                     <button class='fuck-go-back'>назад</button>
                                                                     <div class='rent-film-form'>
-                                                                        <div class='product'>
+                                                                        <div class='product-rent'>
                                                                         <img src='APP/images/posters/${film.poster}' class='film-picture'>
                                                                             <div class='film-info'>
                                                                                 Название: ${film.title}<br>

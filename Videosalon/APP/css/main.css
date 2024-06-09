@@ -260,3 +260,70 @@ footer
     border-radius: 5px;
     cursor: pointer;
 }
+.buy-btn
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.user-info
+{
+    max-width: 1300px;
+    margin: auto;
+}
+.user-info h2
+{
+    margin-top: 20px;
+}
+.user-info h3
+{
+    margin-top: 20px;
+    text-align: center;
+}
+.rented-films
+{
+    margin-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.rented-film-container-user img
+{
+    width: 300px;
+    border-radius: 15px;
+}
+.rented-film-container-user
+{
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 18px;
+}
+.buyed-films
+{
+    margin-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.buyed-films-container img
+{
+    width: 300px;
+    border-radius: 15px;
+}
+.buyed-films-container
+{
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 18px;
+}
