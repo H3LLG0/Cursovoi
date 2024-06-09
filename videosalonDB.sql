@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 30 2024 г., 21:20
+-- Время создания: Июн 09 2024 г., 15:14
 -- Версия сервера: 5.7.39
 -- Версия PHP: 8.0.22
 
@@ -42,7 +42,11 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `title`, `poster`, `producer`, `description`, `rentprice`, `buyprice`) VALUES
-(1, 'Криминальное чтиво', 'Pulp_Fiction.jpg', 'Квентин тарантино', 'тут описание', 100, 600);
+(1, 'Криминальное чтиво', 'Pulp_Fiction.jpg', 'Квентин тарантино', 'тут описание', 100, 600),
+(2, 'Сербский фильм', '576x.webp', 'я снял', 'семейное кино', 200, 1000),
+(3, 'Драйв', '615ot6U8mgL._AC_UF1000,1000_QL80_.jpg', 'Николас Виндинг Рефн', 'поехали', 100, 400),
+(4, 'бойцовский клуб', 'Fight_club.jpg', ' Дэвид Финчер', 'сигма момент', 90, 500),
+(5, 'побег из шоушенка', '25308.jpg', 'Фрэнк Дарабонт', 'валим', 60, 460);
 
 -- --------------------------------------------------------
 
@@ -85,7 +89,8 @@ CREATE TABLE `film_rent` (
 
 INSERT INTO `film_rent` (`id`, `client`, `product`, `term`, `price`) VALUES
 (1, 2, 1, 4, 400),
-(2, 11, 1, 4, 400);
+(2, 11, 1, 4, 400),
+(3, 2, 2, 4, 800);
 
 -- --------------------------------------------------------
 
@@ -110,7 +115,8 @@ INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `role`) VALUE
 (2, 'Константин', 'Савельев', 'hgtcpvshc@gmail.com', '1234', 'admin'),
 (10, 'Андрей', 'Егоров', 'Egorov@gmail.com', '1234567890', 'admin'),
 (11, 'Виталий', 'Иванов', 'Vitalya@gmail.com', 'Bb7381456', 'user'),
-(12, 'Иван', 'Иванов', 'ivanov@gmail.com', '1234', 'user');
+(12, 'Иван', 'Иванов', 'ivanov@gmail.com', '1234', 'user'),
+(13, 'Константин', 'Константин', 'hgfghfg@dfgdf', '123', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -153,7 +159,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `film_buy`
@@ -165,13 +171,13 @@ ALTER TABLE `film_buy`
 -- AUTO_INCREMENT для таблицы `film_rent`
 --
 ALTER TABLE `film_rent`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
