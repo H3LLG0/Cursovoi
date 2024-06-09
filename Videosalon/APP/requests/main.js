@@ -112,7 +112,7 @@ export let mainpaje = () =>
                                 success: function(response)
                                 {
                                     let i = 0;
-                                    $('main').append(`<div class='all-films'></div>`);
+                                    $('main').append(`<h2 class='films-ttl'>Все фильмы</h2><div class='all-films'></div>`);
                                     response.forEach(film => {
                                         $('.all-films').append(`<div id='film${i}' class='film-container'>
                                                                     <img src='APP/images/posters/${film.poster}' class='film-picture'>
@@ -139,8 +139,9 @@ export let mainpaje = () =>
                                                 $('.add-film').on('click',function()
                                                     {
                                                         $('main').empty();
-                                                        $('main').append(`<div class='update-form'>
+                                                        $('main').append(`<div class='create-film'>
                                                         <button class='fuck-go-back'>назад</button>
+                                                        <div class='create-film-container'>
                                                         <form id='create-film-form'>
                                                             <div class='update-film-form-container'>
                                                                 <label>название</label><br>
@@ -158,6 +159,7 @@ export let mainpaje = () =>
                                                                 <button type='submit'>Добавить фильм</button>
                                                             </div>
                                                         </form>
+                                                        </div>
                                                     </div>`);
                                     $('.fuck-go-back').on('click',function(){location.reload(true)});
                                     $('#create-film-form').on('submit',function()
