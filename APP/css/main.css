@@ -1,0 +1,375 @@
+@font-face
+{
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+    url('/APP/font/Montserrat-VariableFont_wght.ttf');
+
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+}
+body
+{
+    max-width: 1600px;
+    margin: auto;
+}
+header h2
+{
+    text-align: center;
+    padding: 10px;
+}
+footer
+{
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.footcontent
+{
+    padding: 10px;
+    font-size: 20px;
+}
+.footcontent a
+{
+    text-decoration: none;
+    color: black;
+}
+.menu-list
+{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+    list-style: none;
+}
+.menu-list li
+{
+    text-align: center;
+}
+.menu-list li button
+{
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.menu-list li button:hover
+{
+    transition: .3s ease-in;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+.all-films
+{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.film-container
+{
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+}
+.films-ttl
+{
+    text-align: center;
+    padding: 10px;
+}
+.film-info
+{
+    text-align: justify;
+}
+.film-container img
+{
+    height: 400px;
+    width: 400px;
+    border-radius: 15px;
+}
+.film-actions
+{
+    text-align: justify;
+}
+.admin-actions
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.film-rent
+{
+    padding: 5px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.film-rent:hover
+{
+    transition: .3s ease-in;
+    color: white;
+    background-color: rgb(40, 40, 194);
+}
+.film-buy
+{
+    padding: 5px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.film-buy:hover
+{
+    transition: .3s ease-in;
+    background-color: green;
+    color: white;
+}
+.film-update
+{
+    padding: 5px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.film-update:hover
+{
+    transition: .3s ease-in;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.film-delete
+{
+    padding: 5px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.film-delete:hover
+{
+    transition: .3s ease-in;
+    background-color: red;
+    color: white;
+}
+.update-form
+{
+    padding: 20px;
+}
+.fuck-go-back
+{
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.fuck-go-back:hover
+{
+    transition: .3s ease-in;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+.update-film-form
+{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+.update-film-form label
+{
+    font-size: 18px;
+}
+.update-film-form input
+{
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    width: 250px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+.update-film-form input:focus
+{
+    outline: 0;
+}
+.update-film-form button
+{
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.rent-film-form
+{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    border-radius: 15px;
+}
+.rent-film-form img
+{
+    border-radius: 15px;
+}
+.rent-film-form form button
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product
+{
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    border-radius: 15px;
+}
+.product img
+{
+    border-radius: 15px;
+}
+.product form button
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buy-btn
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.user-info
+{
+    max-width: 1300px;
+    margin: auto;
+}
+.user-info h2
+{
+    margin-top: 20px;
+}
+.user-info h3
+{
+    margin-top: 20px;
+    text-align: center;
+}
+.rented-films
+{
+    margin-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.rented-film-container-user img
+{
+    width: 300px;
+    border-radius: 15px;
+}
+.rented-film-container-user
+{
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 18px;
+}
+.buyed-films
+{
+    margin-top: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.buyed-films-container img
+{
+    width: 300px;
+    border-radius: 15px;
+}
+.buyed-films-container
+{
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 18px;
+}
+.create-film-container
+{
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    text-align: center;
+}
+.create-film-container form
+{
+    padding: 20px;
+    font-size: 18px;
+}
+.create-film-container form input
+{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.create-film-container form input::placeholder
+{
+    color: black;
+}
+.create-film-container form input:focus
+{
+    outline: 0;
+}
+.create-film-container form button
+{
+    margin-top: 10px;
+    padding: 5px;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
